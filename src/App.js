@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import IndexCom from './pages'
+import ListCom from './pages/list'
+import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 
-function App() {
+function AppRouter() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <ul>
+      <li>
+        <Link to='/'>
+        首页
+        </Link>
+        <Link to='/list/'>
+        首页
+        </Link>
+      </li>
+    </ul>
+    <Route path='/' exact component={IndexCom}></Route>
+    <Route path='/list/' exact component={ListCom}></Route>
+
+    </Router>
   );
 }
 
-export default App;
+export default AppRouter;
