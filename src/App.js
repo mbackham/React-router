@@ -11,13 +11,13 @@ function AppRouter() {
         <Link to='/'>
         首页
         </Link>
-        <Link to='/list/'>
-        首页
+        <Link to='/list/123'>
+        列表
         </Link>
       </li>
     </ul>
     <Route path='/' exact component={IndexCom}></Route>
-    <Route path='/list/' exact component={ListCom}></Route>
+    <Route path='/list/:id' exact component={ListCom}></Route>
 
     </Router>
   );
